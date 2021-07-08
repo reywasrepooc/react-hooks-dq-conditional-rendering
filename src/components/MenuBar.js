@@ -1,23 +1,26 @@
 import React from "react";
 
-function MenuBar( {onButtonClick}) {
+function MenuBar( {onButtonClick, selectedPage}) {
  
-
+const buttonClick = (event) => {
+  if (event.target.className === "item") 
+  return onButtonClick(event.target.id)
+}
   return (
     <div className="ui four item menu">
-      <span className="item active" onClick={() => onButtonClick("Profile")}>
+      <span id="Profile" className= {selectedPage === "Profile" ? "item active" : "item"} onClick={buttonClick}>
         <i className="user large icon" />
       </span>
 
-      <span className="item" onClick={() => onButtonClick("Photos")}>
+      <span id="Photos" className={selectedPage === "Photos" ? "item active" : "item" } onClick={buttonClick}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item" onClick={() => onButtonClick("Cocktails")}>
+      <span id="Cocktails" className={selectedPage === "Cocktails" ? "item active" : "item" } onClick={buttonClick}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item" onClick={() => onButtonClick("Pokemon")}>
+      <span id="Pokemon" className={selectedPage === "Pokemon" ? "item active" : "item" } onClick={buttonClick}>
         <i className=" themeisle large icon" />
       </span>
     </div>

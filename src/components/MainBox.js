@@ -4,7 +4,7 @@ import { Profile, Photos, Cocktails, Pokemon } from "./pages";
 
 function MainBox() {
 
-const [ selectedPage, setSelectedPage ] = useState("Profile")
+const [ selectedPage, setSelectedPage ] = useState("")
 
 const handleClick = (page) => {
   setSelectedPage(page)
