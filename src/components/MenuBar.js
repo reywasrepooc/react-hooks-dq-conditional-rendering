@@ -1,7 +1,33 @@
 import React from "react";
 
-function MenuBar(props) {
-  /*
+function MenuBar( {onButtonClick}) {
+ 
+
+  return (
+    <div className="ui four item menu">
+      <span className="item active" onClick={() => onButtonClick("Profile")}>
+        <i className="user large icon" />
+      </span>
+
+      <span className="item" onClick={() => onButtonClick("Photos")}>
+        <i className="photo large icon" />
+      </span>
+
+      <span className="item" onClick={() => onButtonClick("Cocktails")}>
+        <i className="cocktail large icon" />
+      </span>
+
+      <span className="item" onClick={() => onButtonClick("Pokemon")}>
+        <i className=" themeisle large icon" />
+      </span>
+    </div>
+  );
+}
+
+export default MenuBar;
+
+
+ /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
   should work. When you click a menu item, the button typically becomes
@@ -11,26 +37,3 @@ function MenuBar(props) {
   this component be made aware of what is currently the active menu item?
 
   */
-
-  return (
-    <div className="ui four item menu">
-      <span className="item active">
-        <i className="user large icon" />
-      </span>
-
-      <span className="item">
-        <i className="photo large icon" />
-      </span>
-
-      <span className="item">
-        <i className="cocktail large icon" />
-      </span>
-
-      <span className="item">
-        <i className=" themeisle large icon" />
-      </span>
-    </div>
-  );
-}
-
-export default MenuBar;
